@@ -1,0 +1,11 @@
+<br /><br />
+<div>
+  <input type="checkbox" id="soloImportanti" (click)="mostraImportanti()" />Solo
+  importanti
+</div>
+<div id="list" *ngFor="let post of posts">
+  <div id="postit" *ngIf="(h===undefined || h===false) || h===true && post.importante===true">
+    <app-tx [posts]="posts" [titolo]="post.titolo" [testo]="post.testo"></app-tx>
+    <button (click)="eliminaPost(post)">Elimina</button>
+  </div>
+</div>
